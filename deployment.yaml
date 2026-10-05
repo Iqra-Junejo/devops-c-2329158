@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-c-2329158
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-c-2329158
+  template:
+    metadata:
+      labels:
+        app: devops-c-2329158
+    spec:
+      containers:
+        - name: devops-c-2329158
+          image: devops-c-2329158:v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80

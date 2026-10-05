@@ -1,0 +1,39 @@
+git init -b main
+git add .
+git commit -m "Initial commit: book catalogue website"
+git remote add origin https://github.com/Iqra-Junejo/devops-c-2329158.git
+git push -u origin main
+git switch -c update-content
+git add .
+git commit -m "Add fourth book title"
+git switch main
+git merge --no-ff update-content -m "Merge update-content into main"
+git push origin main
+git push origin update-content
+git log --oneline --graph --all
+git add .
+git commit -m "Add GitHub Pages workflow"
+git push origin main
+git add .
+git commit -m "Update heading"
+git push origin main
+docker build -t devops-c-2329158:v1 .
+docker run -d --name devops-c-2329158 -p 8080:80 devops-c-2329158:v1
+docker images
+docker ps
+winget install Kubernetes.minikube
+winget install Kubernetes.kubectl
+minikube start --driver=docker
+minikube status
+minikube image load devops-c-2329158:v1
+minikube image ls
+kubectl apply -f deployment.yaml
+kubectl get pods
+kubectl get deployments
+kubectl apply -f service.yaml
+kubectl get svc
+minikube service devops-c-2329158 --url
+kubectl scale deployment devops-c-2329158 --replicas=2
+kubectl get pods
+kubectl get deployments
+kubectl get endpoints devops-c-2329158
